@@ -1,0 +1,139 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2rem;
+}
+
+.page-header {
+  margin-bottom: 1.25rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: #3b6fc0;
+  font-size: 0.9rem;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.status {
+  color: #5c5c5c;
+}
+
+.status.error {
+  color: #b42318;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card-list-panel,
+.detail-panel {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  min-height: 280px;
+}
+
+.panel-title {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5c5c5c;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-item {
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  background: #fafafa;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.card-item:hover {
+  border-color: #3b6fc0;
+}
+
+.card-item.selected {
+  border-color: #3b6fc0;
+  background: #eef4fc;
+}
+
+.card-word {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.card-definitions {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.detail-panel .panel-title {
+  font-size: 1.25rem;
+  text-transform: none;
+  letter-spacing: normal;
+  color: #1a1a1a;
+}
+
+.detail-fields {
+  margin: 0;
+}
+
+.detail-fields dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #5c5c5c;
+  margin-top: 1rem;
+}
+
+.detail-fields dt:first-of-type {
+  margin-top: 0;
+}
+
+.detail-fields dd {
+  margin: 0.35rem 0 0;
+  line-height: 1.5;
+}
+
+.placeholder {
+  color: #888;
+  margin: 2rem 0 0;
+  line-height: 1.5;
+}

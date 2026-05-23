@@ -1,0 +1,8 @@
+database/*.db
+__pycache__/
+*.pyc
+back/bin/
+back/obj/
+front/node_modules/
+front/dist/
+front/.angular/

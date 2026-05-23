@@ -1,0 +1,42 @@
+@Flashcards.Api_HostAddress = http://localhost:5074
+
+### List all decks (ordered by name)
+GET {{Flashcards.Api_HostAddress}}/api/decks
+Accept: application/json
+
+###
+
+### Get one deck with all cards
+GET {{Flashcards.Api_HostAddress}}/api/decks/1
+Accept: application/json
+
+###
+
+### Get card count for a deck
+GET {{Flashcards.Api_HostAddress}}/api/decks/1/count
+Accept: application/json
+
+###
+
+### Create a deck
+POST {{Flashcards.Api_HostAddress}}/api/decks
+Content-Type: application/json
+
+{
+  "name": "French basics"
+}
+
+###
+
+### Create a card in a deck
+POST {{Flashcards.Api_HostAddress}}/api/decks/1/cards
+Content-Type: application/json
+
+{
+  "targetWord": "bonjour",
+  "sentence": "Bonjour tout le monde.",
+  "translation": "hello",
+  "definitions": "A common greeting."
+}
+
+###

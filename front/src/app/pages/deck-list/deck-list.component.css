@@ -1,0 +1,57 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}
+
+.page-header h1 {
+  margin: 0 0 0.25rem;
+  font-size: 1.75rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: #5c5c5c;
+}
+
+.status {
+  color: #5c5c5c;
+}
+
+.status.error {
+  color: #b42318;
+}
+
+.deck-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deck-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.deck-item:hover {
+  border-color: #3b6fc0;
+  box-shadow: 0 2px 8px rgba(59, 111, 192, 0.12);
+}
+
+.deck-name {
+  font-weight: 600;
+}
+
+.deck-count {
+  color: #5c5c5c;
+  font-size: 0.9rem;
+}

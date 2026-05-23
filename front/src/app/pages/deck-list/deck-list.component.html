@@ -1,0 +1,25 @@
+<main class="page">
+  <header class="page-header">
+    <h1>Flashcards</h1>
+    <p class="subtitle">Your decks</p>
+  </header>
+
+  @if (loading()) {
+    <p class="status">Loading decks…</p>
+  } @else if (error()) {
+    <p class="status error">{{ error() }}</p>
+  } @else if (decks().length === 0) {
+    <p class="status">No decks yet.</p>
+  } @else {
+    <ul class="deck-list">
+      @for (deck of decks(); track deck.id) {
+        <li>
+          <a [routerLink]="['/decks', deck.id]" class="deck-item">
+            <span class="deck-name">{{ deck.name }}</span>
+            <span class="deck-count">{{ deck.cardCount }} cards</span>
+          </a>
+        </li>
+      }
+    </ul>
+  }
+</main>

@@ -1,0 +1,57 @@
+<main class="page">
+  <header class="page-header">
+    <a routerLink="/" class="back-link">← All decks</a>
+    @if (deck(); as d) {
+      <h1>{{ d.name }}</h1>
+    }
+  </header>
+
+  @if (loading()) {
+    <p class="status">Loading cards…</p>
+  } @else if (error()) {
+    <p class="status error">{{ error() }}</p>
+  } @else {
+    @if (deck(); as d) {
+    <div class="layout">
+      <section class="card-list-panel">
+        <h2 class="panel-title">Cards</h2>
+        @if (d.cards.length === 0) {
+          <p class="status">No cards in this deck.</p>
+        } @else {
+          <ul class="card-list">
+            @for (card of d.cards; track card.id) {
+              <li>
+                <button
+                  type="button"
+                  class="card-item"
+                  [class.selected]="selectedCardId() === card.id"
+                  (click)="selectCard(card)"
+                >
+                  <span class="card-word">{{ card.targetWord }}</span>
+                  @if (card.definitions) {
+                    <span class="card-definitions">{{ card.definitions }}</span>
+                  }
+                </button>
+              </li>
+            }
+          </ul>
+        }
+      </section>
+
+      <aside class="detail-panel">
+        @if (selectedCard(); as card) {
+          <h2 class="panel-title">{{ card.targetWord }}</h2>
+          <dl class="detail-fields">
+            <dt>Sentence</dt>
+            <dd>{{ card.sentence || '—' }}</dd>
+            <dt>Translation</dt>
+            <dd>{{ card.translation || '—' }}</dd>
+          </dl>
+        } @else {
+          <p class="placeholder">Select a card to see sentence and translation.</p>
+        }
+      </aside>
+    </div>
+    }
+  }
+</main>
